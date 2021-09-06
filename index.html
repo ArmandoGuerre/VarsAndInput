@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="finBill"> </h1>
+    <script>
+        //prompting user
+        bill_string=prompt("What was your bill?");
+        bill=parseInt(bill_string);
+        
+        //calculation for tax
+        var tax =bill*.07;
+        console.log("tax = " +tax);
+        //calculation for the taxed bill 
+        var taxed_bill=bill+tax;
+        console.log("taxed bill = " +taxed_bill);
+        //calculation for tip with taxed subtotal 
+        var tip=taxed_bill*.05;
+        console.log("tip = " +tip);
+        //calculation for final bill with tip 
+        var final_bill=taxed_bill+tip;
+        console.log("unrounded final bill = " +final_bill)
+        //using .toFixed to round up to 2 decimal places 
+        var rounded_final_bill = final_bill.toFixed(2);
+        console.log("final bill = " +rounded_final_bill)
+        
+        //linking javascript to document as "classBill" to "finBill"    
+        var classBill = document.querySelector(".finBill");
+        classBill.innerText = "Your bill is $" + rounded_final_bill + ". Have a wonderful day!";
+
+    </script>
+</body>
+</html>
